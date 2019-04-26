@@ -9,7 +9,7 @@
 #' @param pollutant a string: either \emph{'nitrate'} or \empth{'sulfate'}.
 #' @param id a coolection of integers that represent the data files to load.
 #' @return a double representation of the mean. NA if there are any bad arguments.
-pollutandmean <- function(directory, pollutant, id=1:332)
+pollutantmean <- function(directory, pollutant, id=1:332)
 {
     if(pollutant != "nitrate" && pollutant != "sulfate") {
         return(NA)
@@ -17,7 +17,7 @@ pollutandmean <- function(directory, pollutant, id=1:332)
     
     datafile.data <- vector()
     for(fileid in id) {
-        datafile.name <- sprintf("%s%03d.csv", directory, fileid)
+        datafile.name <- sprintf("%s/%03d.csv", directory, fileid)
         filedata <- read.csv(datafile.name, header=TRUE)
         pd <- filedata[pollutant]
         pd <- pd[!is.na(pd)]

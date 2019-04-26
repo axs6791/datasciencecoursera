@@ -11,7 +11,7 @@ complete <- function(directory, id=1:332)
 {
     res = data.frame(id=integer(), nobs=integer())
     for(fileid in id) {
-        datafile.name <- sprintf("%s%03d.csv", directory, fileid)
+        datafile.name <- sprintf("%s/%03d.csv", directory, fileid)
         filedata <- read.csv(datafile.name, header=TRUE)
         cmpl_data <- complete.cases(filedata)
         res<-rbind(res, c(fileid, nrow(filedata[cmpl_data,])))
