@@ -20,7 +20,7 @@ best <- function(state, outcome) {
     if(!(state %in% state.abb)) {
         message(paste("Error in best(", state, ", ", outcome,
                       ") : invalid state)", sep="" ))
-        return()
+        stop()
     }
     # validate condition, and set column number
     if (outcome == "heart attack") {
@@ -32,7 +32,7 @@ best <- function(state, outcome) {
     } else {
         message(paste("Error in best(", state, ", ", outcome,
                       ") : invalid outcome)", sep="" ))
-        return()
+        stop()
     }
 
     ## Return hospital name in that state with lowest 30-day death
