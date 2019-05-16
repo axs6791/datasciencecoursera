@@ -1,5 +1,6 @@
 library("data.table")
 library("dplyr")
+library("dataMaid")
 
 ### Get and Clean Data Project
 
@@ -37,7 +38,7 @@ getKeepColumns <- function()
     myFile.columns <- file.path("UCI HAR Dataset", "features.txt")
     myData.columns <- fread(myFile.columns)
     indexes <- sapply(myData.columns[,2], function(x) {
-        grep("mean|std", x)
+        grep("mean\\(|std\\(", x)
     })
     
     namesAndIndexes <- myData.columns[indexes, ]
