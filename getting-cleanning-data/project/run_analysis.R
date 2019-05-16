@@ -77,6 +77,7 @@ shedColumns <- function(allDF, keepColumns)
 dataUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 dataZip <- "dataSet.zip"
 download.file(dataUrl, dataZip, method="curl")
+unzip(dataZip)
 
 testDF <- putDataTogether("test")
 trainDF <- putDataTogether("train")
