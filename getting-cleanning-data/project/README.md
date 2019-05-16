@@ -39,3 +39,6 @@ In summary, it perfroms the following steps:
 7. Load the activity labels dataframes, and transforms the activity column from
    integer represenatation to string representation.
 8. Write whole dataframe to tidyData.txt
+
+## Output
+Running run_analysis.R creates the tidyData.txt data file with the summarized data.
